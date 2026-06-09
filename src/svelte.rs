@@ -52,7 +52,10 @@ impl SvelteExtension {
                     eprintln!("Warning: failed to installed the most recent {package_name} package: {error}");
 
                     if installed_version.is_none() {
-                        return Err(format!("Error: failed to install {package_name}@{latest_version}: {}", error));
+                        return Err(format!(
+                            "Error: failed to install {package_name}@{latest_version}: {}",
+                            error
+                        ));
                     } else {
                         eprintln!("Utilizing already installed fallback package")
                     }
